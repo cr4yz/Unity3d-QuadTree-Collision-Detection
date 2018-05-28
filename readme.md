@@ -1,4 +1,4 @@
-# Peril Physics
+# Collision Detection & QuadTree
 
 ![Unity3d Quadtree](/screenshot.png?raw=true "Unity3d Quadtree")
 
