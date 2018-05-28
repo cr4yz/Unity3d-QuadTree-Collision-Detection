@@ -7,7 +7,6 @@ namespace Peril.Physics
         public bool Collides;
         public Vector3 Normal;
         public float Penetration;
-        public bool IsGeometry;
         public CollisionType Type;
         public bool First;
     }
