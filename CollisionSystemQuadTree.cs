@@ -33,14 +33,15 @@ namespace Peril.Physics
                 var ents = _quadTree.GetBodies(bodyList[i].CollisionShape.Center, maxDist);
                 for(int j = 0; j < ents.Count; j++)
                 {
-                    if (bodyList[i].Sleeping
-                        || !(ents[j] is ICollisionBody)
-                        || ReferenceEquals(bodyList[i], ents[j]))
-                    {
-                        continue;
-                    }
+					var body2 = ents[j] as ICollisionBody;
+					if(body2 == null
+						|| body2.Sleeping
+						|| ReferenceEquals(bodyList[i], body2))
+					{
+						continue;
+					}
 
-                    Test(bodyList[i], (ICollisionBody)ents[j]);
+                    Test(bodyList[i], body2);
                 }
             }
         }
