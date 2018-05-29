@@ -114,7 +114,7 @@ namespace Peril.Physics
         {
             if (_entCache == null) _entCache = new List<IQuadTreeBody>(64);
             else _entCache.Clear();
-            GetBodies(point, radius, ref _entCache);
+            GetBodies(point, radius, _entCache);
             return _entCache;
         }
 
@@ -122,11 +122,11 @@ namespace Peril.Physics
         {
             if (_entCache == null) _entCache = new List<IQuadTreeBody>(64);
             else _entCache.Clear();
-            GetBodies(rect, ref _entCache);
+            GetBodies(rect, _entCache);
             return _entCache;
         }
 
-        private void GetBodies(Vector2 point, float radius, ref List<IQuadTreeBody> bods)
+        private void GetBodies(Vector2 point, float radius, List<IQuadTreeBody> bods)
         {
             //no children
             if (_childA == null)
@@ -137,17 +137,17 @@ namespace Peril.Physics
             else
             {
                 if (_childA.ContainsCircle(point, radius))
-                    _childA.GetBodies(point, radius, ref bods);
+                    _childA.GetBodies(point, radius, bods);
                 if (_childB.ContainsCircle(point, radius))
-                    _childB.GetBodies(point, radius, ref bods);
+                    _childB.GetBodies(point, radius, bods);
                 if (_childC.ContainsCircle(point, radius))
-                    _childC.GetBodies(point, radius, ref bods);
+                    _childC.GetBodies(point, radius, bods);
                 if (_childD.ContainsCircle(point, radius))
-                    _childD.GetBodies(point, radius, ref bods);
+                    _childD.GetBodies(point, radius, bods);
             }
         }
 
-        private void GetBodies(Rect rect, ref List<IQuadTreeBody> bods)
+        private void GetBodies(Rect rect, List<IQuadTreeBody> bods)
         {
             //no children
             if (_childA == null)
@@ -158,13 +158,13 @@ namespace Peril.Physics
             else
             {
                 if (_childA.ContainsRect(rect))
-                    _childA.GetBodies(rect, ref bods);
+                    _childA.GetBodies(rect, bods);
                 if (_childB.ContainsRect(rect))
-                    _childB.GetBodies(rect, ref bods);
+                    _childB.GetBodies(rect, bods);
                 if (_childC.ContainsRect(rect))
-                    _childC.GetBodies(rect, ref bods);
+                    _childC.GetBodies(rect, bods);
                 if (_childD.ContainsRect(rect))
-                    _childD.GetBodies(rect, ref bods);
+                    _childD.GetBodies(rect, bods);
             }
         }
 
