@@ -112,10 +112,12 @@ namespace Peril.Physics
         }
 
         /// <summary>
-        /// Executes collision between two bodies
+        ///  Executes collision between two bodies
         /// </summary>
         /// <param name="body1"></param>
         /// <param name="body2"></param>
+        /// <param name="removePair"></param>
+        /// <returns></returns>
         protected bool Test(ICollisionBody body1, ICollisionBody body2, bool removePair = true)
         {
             var result = new CollisionResult();

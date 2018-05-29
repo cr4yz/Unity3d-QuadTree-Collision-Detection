@@ -12,7 +12,7 @@ namespace Peril.Physics
         bool Sleeping { get; }
 
         /// <summary>
-        /// 
+        /// The body's collision shape
         /// </summary>
         ICollisionShape CollisionShape { get; }
 
@@ -20,7 +20,7 @@ namespace Peril.Physics
         /// Called each frame of collision
         /// </summary>
         /// <param name="result"></param>
-        /// <param name="menace"></param>
+        /// <param name="other"></param>
         void OnCollision(CollisionResult result, ICollisionBody other);
 
     }

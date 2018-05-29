@@ -2,6 +2,9 @@
 
 namespace Peril.Physics
 {
+    /// <summary>
+    /// Queries a QuadTree to test for collisions with only nearby bodies
+    /// </summary>
     public class CollisionSystemQuadTree : CollisionSystem
     {
 

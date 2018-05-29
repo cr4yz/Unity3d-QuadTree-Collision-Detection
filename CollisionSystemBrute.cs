@@ -10,8 +10,7 @@ using UnityEngine;
 namespace Peril.Physics
 {
     /// <summary>
-    /// Tests all colliders with all other colliders for collision.  Good for scenes
-    /// with small number of colliders ~100
+    /// Brute force collision detection algorithm.
     /// </summary>
     public class CollisionSystemBrute : CollisionSystem
     {
